@@ -1,0 +1,19 @@
+{
+  "name": "tekstr_api",
+  "version": "1.0.0",
+  "description": "A simple JavaScript plugin to handle small text algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkBuskbjerg/Tekstr.js.git"
+  },
+  "author": "Mark Buskbjerg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkBuskbjerg/Tekstr.js/issues"
+  },
+  "homepage": "https://github.com/MarkBuskbjerg/Tekstr.js#readme"
+}
