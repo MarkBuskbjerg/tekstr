@@ -6,13 +6,7 @@ var tekstr = (function () {
 
   // Defaults
   var defaults = {
-    // Selectors
-    // selectorToggle: '.accordion-toggle',
-    // selectorContent: '.accordion',
-
     // Classes
-    // toggleClass: 'active',
-    // contentClass: 'active',
     init: 'js-accordion'
   };
 

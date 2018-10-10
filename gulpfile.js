@@ -94,7 +94,7 @@ var banner = {
     ' <%= packages.author.name %>\n' +
     ' * <%= packages.license %> License\n' +
     ' * <%= packages.repository.url %>\n' +
-    ' * Open Source Credits: <%= packages.openSource.credits %>\n' +
+    // ' * Open Source Credits: <%= packages.openSource.credits %>\n' +
     ' */\n\n',
   min:
     '/*!' +
@@ -113,7 +113,7 @@ var banner = {
  */
 
 var jsTasks = lazypipe()
-  // .pipe(header, banner.full, { packages: packages })
+  .pipe(header, banner.full, { packages: packages })
   .pipe(optimizejs)
   .pipe(
     gulp.dest,
@@ -124,8 +124,8 @@ var jsTasks = lazypipe()
     rename,
     { suffix: '.min' }
   )
-  //.pipe(uglify)
-  // .pipe(optimizejs)
+  .pipe(uglify)
+  .pipe(optimizejs)
   .pipe(
     header,
     banner.min,

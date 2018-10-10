@@ -1,3 +1,10 @@
+/*!
+ * tekstr_api v1.0.0: A simple JavaScript plugin to handle small text algorithms
+ * (c) 2018 
+ * ISC License
+ * git+https://github.com/MarkBuskbjerg/Tekstr.js.git
+ */
+
 var tekstr = (function () {
   'use strict;';
 
@@ -6,13 +13,7 @@ var tekstr = (function () {
 
   // Defaults
   var defaults = {
-    // Selectors
-    // selectorToggle: '.accordion-toggle',
-    // selectorContent: '.accordion',
-
     // Classes
-    // toggleClass: 'active',
-    // contentClass: 'active',
     init: 'js-accordion'
   };
 
