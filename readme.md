@@ -1,5 +1,7 @@
 **Tekstr.js - simple JS plugin to handle text**
 
+Okay. We are still running version 0.0.x - so beware. Things might look rough around the edges.
+
 What can this plugin be used for?
 ------
 The easy answer would be to leave this to your imagination. The sky is the limit, right?
