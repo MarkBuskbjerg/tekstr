@@ -1,5 +1,11 @@
 **Tekstr.js - simple JS plugin to handle text**
 
+What can this plugin be used for?
+------
+The easy answer would be to leave this to your imagination. The sky is the limit, right?
+
+Well. I actually use this in one of my own live project. So go and watch here at <https://tekstr.dk/app/>. Here the plugin is used to calculate the readability of texts in the live editor. And also enabling the user to mark long words and sentences (the highlight stuff is currently not in this plugin - maybe in the future).
+
 
 Getting started with the Tekstr Plugin
 ------
@@ -32,7 +38,7 @@ https://github.com/MarkBuskbjerg/tekstr/blob/master/dist/js/tekstr.js
 ### 2. Start using the API to make fun stuff inside your project
 There is currently no initialization needed. You can just hit the API with whatever you want to use. Count words, sentences or something else in your text. Each method can be called as described here in the docs
 
-Functions
+Functions in the API
 ------
 
 ### tekstr.words(text)
