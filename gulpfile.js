@@ -104,7 +104,7 @@ var banner = {
     ' <%= packages.author.name %>' +
     ' | <%= packages.license %> License' +
     ' | <%= packages.repository.url %>' +
-    ' | Open Source Credits: <%= packages.openSource.credits %>' +
+    // ' | Open Source Credits: <%= packages.openSource.credits %>' +
     ' */\n'
 };
 
@@ -114,7 +114,7 @@ var banner = {
 
 var jsTasks = lazypipe()
   // .pipe(header, banner.full, { packages: packages })
-  //.pipe(optimizejs)
+  .pipe(optimizejs)
   .pipe(
     gulp.dest,
     paths.scripts.output
