@@ -4,6 +4,18 @@ var tekstr = (function () {
   // Public APIs
   var publicAPIs = {};
 
+  // Defaults
+  var defaults = {
+    // Selectors
+    // selectorToggle: '.accordion-toggle',
+    // selectorContent: '.accordion',
+
+    // Classes
+    // toggleClass: 'active',
+    // contentClass: 'active',
+    init: 'js-accordion'
+  };
+
   // Private function
 
   // Public function
