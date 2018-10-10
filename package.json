@@ -41,5 +41,8 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-markdown": "^1.2.0",
     "gulp-file-include": "^0.14.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
   }
 }
