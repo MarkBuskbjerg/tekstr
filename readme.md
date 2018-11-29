@@ -27,7 +27,7 @@ Right now there is only one version live. But I still urge you to use a specific
 ```
 
 **Direct download**
-You can download the file containing the entire JavaScript API here: 
+You can download the file containing the entire JavaScript API here:
 
 ```HTML
 Minified
@@ -50,13 +50,13 @@ This function takes clean text as an input and splits the input into an array of
 ```javascript
 // Easy way to count the number of words in a string of text
 var string = "This is just a string to use as an example. Nothing much to see here.";
-console.log(tekstr.words(string).length); // return 15
+console.log(tekstr.words(string).length); // returns: 15
 
 // Filtering out all words with 6 characters or more
 var string = "This is just a string to use as an example. Nothing much to see here.";
-var wordsArray = tekstr.words(string);
-var countLongWords = wordsArray
-        .filter(function (a) { return a.length > 6; })
-        .length;
-console.log(countLongWords); // return 2
+var longWords = tekstr
+                        .words(string)
+                        .filter(function (a) { return a.length > 6; });
+console.log(longWords); // returns: (2) ["example", "Nothing"]
+console.log(longWords.length); // returns 2
 ```
