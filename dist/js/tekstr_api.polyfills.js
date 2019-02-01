@@ -1,5 +1,5 @@
 /*!
- * tekstr_api v0.0.1: A simple JavaScript plugin to handle small text algorithms
+ * tekstr_api v1.0.3: A simple JavaScript plugin to handle small text algorithms
  * (c) 2019 
  * ISC License
  * git+https://github.com/MarkBuskbjerg/Tekstr.js.git

@@ -1,6 +1,6 @@
 {
   "name": "tekstr_api",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "description": "A simple JavaScript plugin to handle small text algorithms",
   "main": "index.js",
   "scripts": {
