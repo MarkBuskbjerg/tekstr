@@ -1,5 +1,6 @@
 /*!
- * tekstr_api v1.0.3: A simple JavaScript plugin to handle small text algorithms
+ * tekstr_api v1.0.3
+ * A simple JavaScript plugin to handle small text algorithms
  * (c) 2019 
  * ISC License
  * git+https://github.com/MarkBuskbjerg/Tekstr.js.git
@@ -8,16 +9,15 @@
 var tekstr = (function() {
   'use strict;';
 
-  
+
   // Function to make IE9+ support forEach:
-        (function() {
-            if (typeof NodeList.prototype.forEach === "function")
-                return false;
-            else
-                NodeList.prototype.forEach = Array.prototype.forEach;
-        })();
-  
-  
+  (function() {
+    if (typeof NodeList.prototype.forEach === "function")
+      return false;
+    else
+      NodeList.prototype.forEach = Array.prototype.forEach;
+  })();
+
   // Public APIs
   var publicAPIs = {};
 
