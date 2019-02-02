@@ -23,7 +23,7 @@ You can also use the jsDelivr CDN.
 Right now there is only one version live. But I still urge you to use a specific version in your project. This is in order to prevent my future updates from breaking your site. It is still so early that naming conventions aren't fully established.
 
 ```HTML
-<script src="https://cdn.jsdelivr.net/gh/MarkBuskbjerg/tekstr@0.0.1/dist/js/tekstr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MarkBuskbjerg/tekstr@1.0.2/dist/js/tekstr.min.js"></script>
 ```
 
 **Direct download**
