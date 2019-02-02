@@ -9,16 +9,15 @@
 var tekstr = (function() {
   'use strict;';
 
-  
+
   // Function to make IE9+ support forEach:
-        (function() {
-            if (typeof NodeList.prototype.forEach === "function")
-                return false;
-            else
-                NodeList.prototype.forEach = Array.prototype.forEach;
-        })();
-  
-  
+  (function() {
+    if (typeof NodeList.prototype.forEach === "function")
+      return false;
+    else
+      NodeList.prototype.forEach = Array.prototype.forEach;
+  })();
+
   // Public APIs
   var publicAPIs = {};
 
