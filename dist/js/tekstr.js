@@ -9,13 +9,10 @@
 var tekstr = (function() {
   'use strict;';
 
-
   // Function to make IE9+ support forEach:
   (function() {
-    if (typeof NodeList.prototype.forEach === "function")
-      return false;
-    else
-      NodeList.prototype.forEach = Array.prototype.forEach;
+    if (typeof NodeList.prototype.forEach === 'function') return false;
+    else NodeList.prototype.forEach = Array.prototype.forEach;
   })();
 
   // Public APIs
@@ -32,12 +29,24 @@ var tekstr = (function() {
    */
   publicAPIs.words = function(text) {
     return text
-      .replace(/[-'.]/ig, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
+      .replace(/[-'.]/gi, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
       .split(/[^a-zA-ZæøåÆØÅ0-9]/g) // Can't use \W+ since I need to take into account danish character ÆØÅ
       .filter(Boolean);
   };
 
   /**
+   * splitParagraphs
+   *
+   * @param {string}  text The text you want to split into an array of paragraphs
+   * @returns array
+   *
+   */
+  publicAPIs.splitParagraphs = function(text) {
+    return text.match(/<p/ > g) || [];
+  };
+
+  /**
+   * TODO: Deprecate this in future versions
    * Count sections / paragraphs in a text
    *
    * @param {string} text The text in which you want to count sections
@@ -64,7 +73,9 @@ var tekstr = (function() {
    */
   publicAPIs.averageCharactersPerWord = function(text) {
     return (
-      Math.round((tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100) / 100
+      Math.round(
+        (tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100
+      ) / 100
     );
   };
 
@@ -90,7 +101,9 @@ var tekstr = (function() {
    * @param {string} text  The text you need to know the average sentence length of
    **/
   publicAPIs.averageSentenceLength = function(text) {
-    return Math.round(tekstr.words(text).length / tekstr.sentences(text).length);
+    return Math.round(
+      tekstr.words(text).length / tekstr.sentences(text).length
+    );
   };
 
   /**
@@ -100,7 +113,9 @@ var tekstr = (function() {
    * @param {!number} sentenceCount   The number of sentences in the text string
    **/
   publicAPIs.calculateLix = function(wordCount, longWordsCount, sentenceCount) {
-    return Math.round((wordCount / sentenceCount) + ((longWordsCount * 100) / wordCount));
+    return Math.round(
+      wordCount / sentenceCount + (longWordsCount * 100) / wordCount
+    );
   };
 
   /**
