@@ -25,7 +25,7 @@ var tekstr = (function() {
       return null;
     }
     return text
-      .replace(/[-'.]/gi, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
+      .replace(/[-'.,]/gi, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
       .split(/[^a-zA-ZæøåÆØÅ0-9]/g) // Can't use \W+ since I need to take into account danish character ÆØÅ
       .filter(Boolean);
   };

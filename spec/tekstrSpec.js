@@ -2,7 +2,7 @@ describe('words', function() {
   var stringOne = 'This is a string of ten words. You get it?';
   var stringTwo = 'This is a string of nine words. You get?';
   var stringThree =
-    'This is a longer string with random words and 10.000 characters. Maybe. I dont know. I should try and find some crazy edgecases in order to mess this up';
+    'This is a longer string with random words and 10.000,75 characters. Maybe. I dont know. I should try and find some crazy edgecases in order to mess this up';
   it('should throw an error if text parameter is not a string', function() {
     expect(tekstr.words(12)).toBeNull();
   });
