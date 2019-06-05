@@ -38,8 +38,7 @@ describe('lixCalculator', function() {
 });
 
 describe('measureSpeed', function() {
-  xit('should return correct reading time based on wordCount input', function() {
+  it('should return correct reading time based on wordCount input', function() {
     expect(tekstr.measureSpeed(600, 220)).toEqual(3);
-    pending('get your finger out and remove minutes from the return statement');
   });
 });

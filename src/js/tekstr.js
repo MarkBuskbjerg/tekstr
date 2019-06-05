@@ -117,12 +117,10 @@ var tekstr = (function() {
   /**
    * Measure speed on the text
    * @param {!number} wordCount  The number of words in a text string
-   * @param {!number} speed      The speed in which numbers are consumed in the specific context
-   * TODO: Be more specific in the docs about what speed is here... words pr minute or second?
+   * @param {!number} speed      The speed in which numbers are consumed in the specific context - what is number of words consumed pr minuter
    **/
   publicAPIs.measureSpeed = function(wordCount, speed) {
-    // TODO: Should not be hardcoded to return with " minutter"
-    return Math.ceil(wordCount / speed) + ' minutter';
+    return Math.ceil(wordCount / speed);
   };
 
   // Return our public APIs
