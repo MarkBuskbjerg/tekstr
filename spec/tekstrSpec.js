@@ -1,4 +1,4 @@
-describe('Words', function() {
+describe('words', function() {
   var stringOne = 'This is a string of ten words. You get it?';
   var stringTwo = 'This is a string of nine words. You get?';
   var stringThree =
@@ -14,5 +14,32 @@ describe('Words', function() {
     expect(tekstr.words(stringOne).length).toEqual(10);
     expect(tekstr.words(stringTwo).length).toEqual(9);
     expect(tekstr.words(stringThree).length).toEqual(29);
+  });
+});
+
+describe('splitParapgrahs', function() {
+  var sentenceStringOne =
+    'This is a sentence. And another sentence! Is this a sentence? Should this: count as two sentences?';
+  it('should return an array', function() {
+    expect(tekstr.sentences(sentenceStringOne)).toEqual(jasmine.any(Array));
+  });
+  it('should return the correct length of the sentence array when counted via length', function() {
+    expect(tekstr.sentences(sentenceStringOne).length).toEqual(4);
+  });
+});
+
+describe('lixCalculator', function() {
+  it('should return correct lix value', function() {
+    expect(tekstr.calculateLix(297, 40, 35)).toEqual(22);
+    expect(tekstr.calculateLix(1000, 120, 105)).toEqual(22);
+    expect(tekstr.calculateLix(2000, 165, 105)).toEqual(27);
+    expect(tekstr.calculateLix(1500, 170, 150)).toEqual(21);
+  });
+});
+
+describe('measureSpeed', function() {
+  xit('should return correct reading time based on wordCount input', function() {
+    expect(tekstr.measureSpeed(600, 220)).toEqual(3);
+    pending('get your finger out and remove minutes from the return statement');
   });
 });
