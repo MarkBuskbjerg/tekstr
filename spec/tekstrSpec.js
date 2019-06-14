@@ -35,6 +35,10 @@ describe('lixCalculator', function() {
     expect(tekstr.calculateLix(2000, 165, 105)).toEqual(27);
     expect(tekstr.calculateLix(1500, 170, 150)).toEqual(21);
   });
+  it('should return an integer and not a float in all cases', function() {
+    expect(tekstr.calculateLix(1400, 120.4, 150)).toEqual(18);
+    expect(tekstr.calculateLix(900, 112.6, 145)).toEqual(19);
+  });
 });
 
 describe('measureSpeed', function() {
