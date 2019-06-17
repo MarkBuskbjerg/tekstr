@@ -32,7 +32,7 @@ var tekstr = (function() {
 
   /**
    * splitParagraphs
-   *
+   * TODO: Write a test for this
    * @param {string}  text The text you want to split into an array of paragraphs
    * @returns array
    *
@@ -42,16 +42,18 @@ var tekstr = (function() {
   };
 
   /**
-   * TODO: Deprecate this in future versions
+   * WARNING: Deprecated
    * Count sections / paragraphs in a text
    *
    * @param {string} text The text in which you want to count sections
    * @returns number
    */
+  /*
   publicAPIs.countSections = function(text) {
     return (text.match(/<p/g) || []).length;
     //TODO: Filter empty paragraphs out in some way so that only sections containing text will result in a count
   };
+  */
 
   publicAPIs.countCharacters = function(text, spacesBoolean) {
     if (spacesBoolean) {
@@ -82,7 +84,7 @@ var tekstr = (function() {
   publicAPIs.sentences = function(text) {
     var sentenceArray = [];
     // TODO: Match known abrreviations instead of the replaces
-    var sentences = text // TODO: The var sentences could probably be deleted without worry. Try it.
+    var sentences = text // TODO: The var sentences could probably be deleted without worry. Try it on next refactor.
       .replace(/\. ([a-z])/g, ' $1')
       .replace(/\.([a-z])/g, '$1')
       .split(/\?|\!|\.|\n/g)
@@ -112,6 +114,7 @@ var tekstr = (function() {
     return Math.round(
       wordCount / sentenceCount + (longWordsCount * 100) / wordCount
     );
+    return wordCount / sentenceCount + (longWordsCount * 100) / wordCount;
   };
 
   /**
