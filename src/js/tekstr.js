@@ -70,11 +70,7 @@ var tekstr = (function() {
    * @returns number
    */
   publicAPIs.averageCharactersPerWord = function(text) {
-    return (
-      Math.round(
-        (tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100
-      ) / 100
-    );
+    return Math.round((tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100) / 100;
   };
 
   /**
@@ -99,9 +95,7 @@ var tekstr = (function() {
    * @param {string} text  The text you need to know the average sentence length of
    **/
   publicAPIs.averageSentenceLength = function(text) {
-    return Math.round(
-      tekstr.words(text).length / tekstr.sentences(text).length
-    );
+    return Math.round(tekstr.words(text).length / tekstr.sentences(text).length);
   };
 
   /**
@@ -111,10 +105,7 @@ var tekstr = (function() {
    * @param {!number} sentenceCount   The number of sentences in the text string
    **/
   publicAPIs.calculateLix = function(wordCount, longWordsCount, sentenceCount) {
-    return Math.round(
-      wordCount / sentenceCount + (longWordsCount * 100) / wordCount
-    );
-    return wordCount / sentenceCount + (longWordsCount * 100) / wordCount;
+    return Math.round(wordCount / sentenceCount + (longWordsCount * 100) / wordCount);
   };
 
   /**

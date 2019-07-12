@@ -28,15 +28,19 @@ var tekstr = (function() {
    * @returns array
    */
   publicAPIs.words = function(text) {
+    if (typeof text !== 'string') {
+      console.error('tekstr.words only works with a string a an input');
+      return null;
+    }
     return text
-      .replace(/[-'.]/gi, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
+      .replace(/[-'.,]/gi, '') // Ignores hyphens and apostrophes. Dots are here to avoid split on . in numbers.
       .split(/[^a-zA-ZæøåÆØÅ0-9]/g) // Can't use \W+ since I need to take into account danish character ÆØÅ
       .filter(Boolean);
   };
 
   /**
    * splitParagraphs
-   *
+   * TODO: Write a test for this
    * @param {string}  text The text you want to split into an array of paragraphs
    * @returns array
    *
@@ -46,16 +50,18 @@ var tekstr = (function() {
   };
 
   /**
-   * TODO: Deprecate this in future versions
+   * WARNING: Deprecated
    * Count sections / paragraphs in a text
    *
    * @param {string} text The text in which you want to count sections
    * @returns number
    */
+  /*
   publicAPIs.countSections = function(text) {
     return (text.match(/<p/g) || []).length;
     //TODO: Filter empty paragraphs out in some way so that only sections containing text will result in a count
   };
+  */
 
   publicAPIs.countCharacters = function(text, spacesBoolean) {
     if (spacesBoolean) {
@@ -72,11 +78,7 @@ var tekstr = (function() {
    * @returns number
    */
   publicAPIs.averageCharactersPerWord = function(text) {
-    return (
-      Math.round(
-        (tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100
-      ) / 100
-    );
+    return Math.round((tekstr.countCharacters(text, false) / tekstr.words(text).length) * 100) / 100;
   };
 
   /**
@@ -86,7 +88,7 @@ var tekstr = (function() {
   publicAPIs.sentences = function(text) {
     var sentenceArray = [];
     // TODO: Match known abrreviations instead of the replaces
-    var sentences = text // TODO: The var sentences could probably be deleted without worry. Try it.
+    var sentences = text // TODO: The var sentences could probably be deleted without worry. Try it on next refactor.
       .replace(/\. ([a-z])/g, ' $1')
       .replace(/\.([a-z])/g, '$1')
       .split(/\?|\!|\.|\n/g)
@@ -101,9 +103,7 @@ var tekstr = (function() {
    * @param {string} text  The text you need to know the average sentence length of
    **/
   publicAPIs.averageSentenceLength = function(text) {
-    return Math.round(
-      tekstr.words(text).length / tekstr.sentences(text).length
-    );
+    return Math.round(tekstr.words(text).length / tekstr.sentences(text).length);
   };
 
   /**
@@ -113,20 +113,16 @@ var tekstr = (function() {
    * @param {!number} sentenceCount   The number of sentences in the text string
    **/
   publicAPIs.calculateLix = function(wordCount, longWordsCount, sentenceCount) {
-    return Math.round(
-      wordCount / sentenceCount + (longWordsCount * 100) / wordCount
-    );
+    return Math.round(wordCount / sentenceCount + (longWordsCount * 100) / wordCount);
   };
 
   /**
    * Measure speed on the text
    * @param {!number} wordCount  The number of words in a text string
-   * @param {!number} speed      The speed in which numbers are consumed in the specific context
-   * TODO: Be more specific in the docs about what speed is here... words pr minute or second?
+   * @param {!number} speed      The speed in which numbers are consumed in the specific context - what is number of words consumed pr minuter
    **/
   publicAPIs.measureSpeed = function(wordCount, speed) {
-    // TODO: Should not be hardcoded to return with " minutter"
-    return Math.ceil(wordCount / speed) + ' minutter';
+    return Math.ceil(wordCount / speed);
   };
 
   // Return our public APIs

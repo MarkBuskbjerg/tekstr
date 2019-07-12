@@ -90,7 +90,7 @@ describe('lixCalculator', function() {
     expect(tekstr.calculateLix(1500, 170, 150)).toEqual(21);
   });
   // TODO: Maybe write an assertion for integer more specifically instead of just testing for the return number
-  fit('should return an integer and not a float', function() {
+  it('should return an integer and not a float', function() {
     expect(tekstr.calculateLix(1400, 120.4, 150)).toMatch(isIntegerRegEx);
     expect(tekstr.calculateLix(900, 112.6, 145)).toMatch(isIntegerRegEx);
   });

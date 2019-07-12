@@ -4,12 +4,12 @@
  */
 
 var settings = {
-  clean: false,
-  scripts: false,
+  clean: true,
+  scripts: true,
   polyfills: false,
   styles: false,
   svgs: false,
-  copy: false,
+  copy: true,
   reload: false,
 };
 
@@ -160,10 +160,7 @@ var buildScripts = function(done) {
           suffix = '.polyfills';
 
           // Grab files that aren't polyfills, concatenate them, and process them
-          src([
-            file.path + '/*.js',
-            '!' + file.path + '/*' + paths.scripts.polyfills,
-          ])
+          src([file.path + '/*.js', '!' + file.path + '/*' + paths.scripts.polyfills])
             .pipe(concat(file.relative + '.js'))
             .pipe(jsTasks());
         }
@@ -298,10 +295,7 @@ var watchSource = function(done) {
 
 // Default task
 // gulp
-exports.default = series(
-  cleanDist,
-  parallel(buildScripts, lintScripts, buildStyles, buildSVGs, copyFiles)
-);
+exports.default = series(cleanDist, parallel(buildScripts, lintScripts, buildStyles, buildSVGs, copyFiles));
 
 // Watch and reload
 // gulp watch
