@@ -63,6 +63,14 @@ var tekstr = (function() {
   };
   */
 
+  /**
+   * Get the character count from a string of text - with or without spaces counted
+   *
+   * @param {string} text
+   * @param {Boolean}
+   * @returns number
+   */
+
   publicAPIs.countCharacters = function(text, spacesBoolean) {
     if (spacesBoolean) {
       return text.split('').length;
@@ -101,6 +109,7 @@ var tekstr = (function() {
   /**
    * Get the average length (measured in xxxx) of a text string
    * @param {string} text  The text you need to know the average sentence length of
+   * @returns number
    **/
   publicAPIs.averageSentenceLength = function(text) {
     return Math.round(tekstr.words(text).length / tekstr.sentences(text).length);
