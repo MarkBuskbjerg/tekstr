@@ -38,7 +38,7 @@ var tekstr = (function() {
    *
    */
   publicAPIs.splitParagraphs = function(text) {
-    return text.match(/<p/ > g) || [];
+    return text.match(/<p/ >/g) || [];
   };
 
   /**
